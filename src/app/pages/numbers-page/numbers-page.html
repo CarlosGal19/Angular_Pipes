@@ -1,1 +1,23 @@
-<p>numbers-page works!</p>
+<section class="mx-6 space-y-2">
+  <h1 class="text-4xl font-bold">Numeric pipes</h1>
+  <h2 class="text-xs">Some of the basic pipes included in Angular for transforming numbers.</h2>
+</section>
+<div class="stats stats-vertical sm:stats-horizontal shadow w-full flex justify-center">
+  <div class="stat">
+    <div class="stat-title">Numeric</div>
+    <div class="stat-value">{{totalSells() | number}}</div>
+    <div class="stat-desc">{{totalSells()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Currency</div>
+    <div class="stat-value">{{totalSells() | currency: 'MXN': 'symbol': '.3-5'}}</div>
+    <div class="stat-desc">{{totalSells()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Percent</div>
+    <div class="stat-value">{{percent() | percent: '3.3-5'}}</div>
+    <div class="stat-desc">{{percent()}}</div>
+  </div>
+</div>
