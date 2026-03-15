@@ -1,1 +1,23 @@
-<p>basic-page works!</p>
+<section class="mx-6 space-y-2">
+  <h1 class="text-4xl font-bold">Basic pipes</h1>
+  <h2 class="text-xs">Most of the basic pipes included in Angular for transforming texts, dates and more.</h2>
+</section>
+<div class="stats stats-vertical sm:stats-horizontal shadow w-full flex justify-center">
+  <div class="stat">
+    <div class="stat-title">Lower name</div>
+    <div class="stat-value">{{nameLower() | lowercase}}</div>
+    <div class="stat-desc">{{nameLower()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Upper name</div>
+    <div class="stat-value">{{nameUpper() | uppercase}}</div>
+    <div class="stat-desc">{{nameUpper()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Full name</div>
+    <div class="stat-value">{{fullName() | titlecase}}</div>
+    <div class="stat-desc">{{fullName()}}</div>
+  </div>
+</div>
