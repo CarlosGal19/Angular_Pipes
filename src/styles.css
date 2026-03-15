@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/* Tema base (oscuro) */
+:root {
+  --color-bg: #222222;
+  --color-text: #f1f5f9;
+}
+
+/* Tema claro opcional */
+.light {
+  --color-bg: #ffffff;
+  --color-text: #222222;
+}
+
+/* tokens para tailwind */
+@theme {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+}
+
+/* estilos base */
+body {
+  @apply bg-background text-foreground;
+}
