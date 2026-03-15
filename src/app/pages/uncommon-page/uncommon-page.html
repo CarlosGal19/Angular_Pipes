@@ -23,4 +23,13 @@
       Remove client
     </button>
   </app-card>
+
+  <app-card title="SlicePipe">
+    <b>Original data</b>
+    <p class="text-primary">{{clients().join(', ')}}</p>
+    <b class="mt-2">Slice 0:2</b>
+    <p class="text-primary">{{clients() | slice: 0 : 2}}</p>
+    <b class="mt-2">Slice 1:2</b>
+    <p class="text-primary">{{clients() | slice: 1 : 2}}</p>
+  </app-card>
 </div>
