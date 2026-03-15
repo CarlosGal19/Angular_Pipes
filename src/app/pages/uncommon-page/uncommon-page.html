@@ -44,4 +44,11 @@
       <p class="text-primary">{{item.key}}: {{item.value}}</p>
     }
   </app-card>
+
+  <app-card title="AsyncPipe">
+    @if(promiseValue | async; as value) {
+      <p class="text-primary">{{value}}</p>
+    }
+
+  </app-card>
 </div>
