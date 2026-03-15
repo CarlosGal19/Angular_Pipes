@@ -51,4 +51,13 @@
     }
 
   </app-card>
+
+  <app-card title="ObservablesAsyncPipe">
+    @if(myObservableTimer | async; as value) {
+      <p>{{value}}</p>
+    } @else {
+      <p>Loading first value</p>
+    }
+
+  </app-card>
 </div>

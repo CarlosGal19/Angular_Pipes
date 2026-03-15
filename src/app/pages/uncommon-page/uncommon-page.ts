@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Card } from "../../components/card/card";
 import { AsyncPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, SlicePipe } from '@angular/common';
+import { interval, tap } from 'rxjs';
 
 const client1 = {
   name: 'Carlos Galindo',
@@ -72,7 +73,13 @@ export default class UncommonPage {
   promiseValue: Promise<string> = new Promise((resolve) => {
     setTimeout(() => {
       resolve('Hello World');
-      console.log('Finished promise')
     }, 3000)
   })
+
+  // Async pipe with observables
+  myObservableTimer = interval(1000).pipe(
+    tap((d) => {
+      console.log(d)
+    })
+  )
 }
