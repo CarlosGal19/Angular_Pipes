@@ -1,0 +1,18 @@
+<div class="navbar bg-[#222222] shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl" routerLink="basic">Angular Pipes</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1 space-x-2">
+      @for (route of routes; track route.path) {
+        <li>
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="btn-primary"
+            class="btn"
+          >{{route.title}}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>
