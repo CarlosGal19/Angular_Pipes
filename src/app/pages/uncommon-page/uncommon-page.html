@@ -12,4 +12,15 @@
       Change client
     </button>
   </app-card>
+
+  <app-card title="i18nPluralPipe">
+    <p>{{clients().length | i18nPlural:clientsMap}}</p>
+    <button
+    [disabled]="clients().length === 0"
+      class="btn btn-primary"
+      (click)="removeClient()"
+    >
+      Remove client
+    </button>
+  </app-card>
 </div>
