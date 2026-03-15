@@ -38,4 +38,10 @@
     <pre>{{client() | json}}</pre>
     <p>{{clients().join(', ')}}</p>
   </app-card>
+
+  <app-card title="KeyValuePipe">
+    @for (item of profile | keyvalue: null; track item.key) {
+      <p class="text-primary">{{item.key}}: {{item.value}}</p>
+    }
+  </app-card>
 </div>
