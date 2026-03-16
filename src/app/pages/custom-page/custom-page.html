@@ -52,7 +52,7 @@
           <td>{{hero.name}}</td>
           <td [class.text-accent]="hero.canFly" [class.text-secondary]="!hero.canFly">{{hero.canFly | canFly}}</td>
           <td [style.color]="hero.color | textColor">{{hero.color | color}}</td>
-          <td>{{hero.creator}}</td>
+          <td>{{hero.creator | creator}}</td>
         </tr>
       }
     </tbody>
