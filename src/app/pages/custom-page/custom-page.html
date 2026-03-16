@@ -1,1 +1,15 @@
-<p>custom-page works!</p>
+<section class="mx-6 space-y-2">
+  <h1 class="text-4xl font-bold">Custom pipes</h1>
+  <h2 class="text-xs">You can create your custom pipes based on what you need.</h2>
+</section>
+
+<div class="stats shadow">
+  <div class="stat">
+    <div class="stat-title">Toggle pipe</div>
+    <div class="stat-value">{{name | toggleCasePipe : case()}}</div>
+    <div class="stat-desc">{{name}}</div>
+    <div>
+      <button class="btn btn-primary" (click)="changeCase()">Toggle status</button>
+    </div>
+  </div>
+</div>
