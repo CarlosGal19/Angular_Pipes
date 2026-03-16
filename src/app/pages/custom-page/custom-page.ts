@@ -6,10 +6,11 @@ import { ColorPipe } from './pipes/color-pipe';
 import { TextColorPipe } from './pipes/text-color-pipe';
 import { CreatorPipe } from './pipes/creator-pipe';
 import { SortHeroPipe } from './pipes/sort-hero-pipe';
+import { FilterPipe } from './pipes/filter-pipe';
 
 @Component({
   selector: 'custom-page',
-  imports: [ToggleCasePipe, CanFlyPipe, ColorPipe, TextColorPipe, CreatorPipe, SortHeroPipe],
+  imports: [ToggleCasePipe, CanFlyPipe, ColorPipe, TextColorPipe, CreatorPipe, SortHeroPipe, FilterPipe],
   templateUrl: './custom-page.html',
 })
 export default class CustomPage {
@@ -20,6 +21,8 @@ export default class CustomPage {
   heroes = signal([...heroes]);
 
   selectedSorted = signal<'name' | 'canFly' | 'color' | 'creator'>('name');
+
+  search = signal<string>('');
 
   changeCase() {
     if(this.case() === 'lower') {

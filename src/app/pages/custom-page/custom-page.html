@@ -17,7 +17,9 @@
 <div class="divider my-2"></div>
 <section class="my-4">
   <h1 class="text-2xl font-bold">Custom pipes in action</h1>
-  <div class="flex gap-2 justify-end w-full">
+  <div class="flex gap-2 justify-end w-full mt-2">
+    <input type="text" name="search" id="search" (input)="search.set(inputValue.value)" class="input input-border w-full max-w-xs" placeholder="Search hero" #inputValue>
+    <div class="flex flex-1"></div>
     <button class="btn btn-primary" (click)="selectedSorted.set('name')">
       By name
     </button>
@@ -46,7 +48,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (hero of heroes() | sortHero: selectedSorted(); track hero.id) {
+      @for (hero of heroes() | filter: search() | sortHero: selectedSorted(); track hero.id) {
         <tr>
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
