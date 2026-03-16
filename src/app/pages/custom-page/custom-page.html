@@ -18,16 +18,16 @@
 <section class="my-4">
   <h1 class="text-2xl font-bold">Custom pipes in action</h1>
   <div class="flex gap-2 justify-end w-full">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="selectedSorted.set('name')">
       By name
     </button>
-    <button class="btn btn-secondary">
+    <button class="btn btn-secondary" (click)="selectedSorted.set('canFly')">
       By can fly
     </button>
-    <button class="btn btn-accent">
+    <button class="btn btn-accent" (click)="selectedSorted.set('color')">
       By color
     </button>
-    <button class="btn btn-info">
+    <button class="btn btn-info" (click)="selectedSorted.set('creator')">
       By creator
     </button>
   </div>
@@ -46,7 +46,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (hero of heroes(); track hero.id) {
+      @for (hero of heroes() | sortHero: selectedSorted(); track hero.id) {
         <tr>
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
